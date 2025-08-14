@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS TotalEmployees,
+       AVG(Salary) AS AverageSalary
+FROM Employees;
