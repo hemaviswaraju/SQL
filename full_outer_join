@@ -1,0 +1,9 @@
+SELECT Employees.FirstName, Departments.DeptName
+FROM Employees
+LEFT JOIN Departments
+ON Employees.Department = Departments.DeptName
+UNION
+SELECT Employees.FirstName, Departments.DeptName
+FROM Employees
+RIGHT JOIN Departments
+ON Employees.Department = Departments.DeptName;
