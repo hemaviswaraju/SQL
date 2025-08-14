@@ -1,0 +1,3 @@
+SELECT * FROM Employees
+ORDER BY EmpID
+LIMIT 2 OFFSET 1;
