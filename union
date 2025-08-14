@@ -1,0 +1,3 @@
+SELECT FirstName AS Name FROM Employees
+UNION
+SELECT DeptName AS Name FROM Departments;
