@@ -1,0 +1,7 @@
+SELECT FirstName, Salary,
+CASE
+    WHEN Salary > 60000 THEN 'High'
+    WHEN Salary BETWEEN 40000 AND 60000 THEN 'Medium'
+    ELSE 'Low'
+END AS SalaryCategory
+FROM Employees;
