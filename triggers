@@ -1,0 +1,17 @@
+CREATE TABLE SalaryLog (
+    LogID INT AUTO_INCREMENT PRIMARY KEY,
+    EmpID INT,
+    OldSalary DECIMAL(10,2),
+    NewSalary DECIMAL(10,2),
+    ChangeDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+DELIMITER //
+CREATE TRIGGER SalaryUpdateTrigger
+BEFORE UPDATE ON Employees
+FOR EACH ROW
+BEGIN
+    INSERT INTO SalaryLog (EmpID, OldSalary, NewSalary)
+    VALUES (OLD.EmpID, OLD.Salary, NEW.Salary);
+END //
+DELIMITER ;
